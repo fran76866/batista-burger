@@ -14,7 +14,6 @@ Seja para matar aquela fome do dia ou para aproveitar um lanche especial, temos 
 
 Batista Burger, seu desejo de comer bem começa aqui! 🍟🥤
 
-## 🍟 Produtos e preços
 
 ## 🍟 Produtos e preços
 
