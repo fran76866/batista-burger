@@ -1,54 +1,62 @@
 
 function simularCompra() {
-    // Preços dos produtos apresentados na página
+    // Preços dos produtos
     const precoBurger = 18;
     const precoBatata = 10;
     const precoRefri = 6;
 
-    // Solicita as quantidades ao usuário
-    const qtdBurger = Number(
-        prompt("Quantos X-Burgers deseja? (R$ 18,00 cada)")
+    // Pergunta a quantidade de X-Burgers
+    const respostaBurger = prompt(
+        "Quantos X-Burgers deseja? (R$ 18,00 cada)"
     );
 
-    // Verifica se o usuário cancelou a primeira pergunta
-    if (qtdBurger === null || !Number.isFinite(qtdBurger)) {
-        alert("Compra cancelada ou quantidade inválida.");
+    if (respostaBurger === null) {
+        alert("Compra cancelada.");
         return;
     }
 
-    const qtdBatata = Number(
-        prompt("Quantas Batatas Fritas deseja? (R$ 10,00 cada)")
+    const qtdBurger = Number(respostaBurger);
+
+    // Pergunta a quantidade de batatas fritas
+    const respostaBatata = prompt(
+        "Quantas Batatas Fritas deseja? (R$ 10,00 cada)"
     );
 
-    if (!Number.isFinite(qtdBatata)) {
-        alert("Compra cancelada ou quantidade inválida.");
+    if (respostaBatata === null) {
+        alert("Compra cancelada.");
         return;
     }
 
-    const qtdRefri = Number(
-        prompt("Quantos Refrigerantes deseja? (R$ 6,00 cada)")
+    const qtdBatata = Number(respostaBatata);
+
+    // Pergunta a quantidade de refrigerantes
+    const respostaRefri = prompt(
+        "Quantos Refrigerantes deseja? (R$ 6,00 cada)"
     );
 
-    if (!Number.isFinite(qtdRefri)) {
-        alert("Compra cancelada ou quantidade inválida.");
+    if (respostaRefri === null) {
+        alert("Compra cancelada.");
         return;
     }
 
-    // Reúne as quantidades para validar os dados
+    const qtdRefri = Number(respostaRefri);
+
+    // Verifica se as quantidades são válidas
     const quantidades = [qtdBurger, qtdBatata, qtdRefri];
 
-    // Aceita somente números inteiros maiores ou iguais a zero
     const quantidadeInvalida = quantidades.some(
         quantidade =>
             !Number.isInteger(quantidade) || quantidade < 0
     );
 
     if (quantidadeInvalida) {
-        alert("Digite apenas números inteiros iguais ou maiores que zero.");
+        alert(
+            "Digite apenas números inteiros iguais ou maiores que zero."
+        );
         return;
     }
 
-    // Verifica se nenhum produto foi escolhido
+    // Verifica se nenhum produto foi selecionado
     if (qtdBurger === 0 && qtdBatata === 0 && qtdRefri === 0) {
         alert("Nenhum produto foi selecionado!");
         return;
@@ -59,10 +67,10 @@ function simularCompra() {
     const totalBatata = precoBatata * qtdBatata;
     const totalRefri = precoRefri * qtdRefri;
 
-    // Soma os valores para obter o subtotal
+    // Calcula o subtotal
     const subtotal = totalBurger + totalBatata + totalRefri;
 
-    // Aplica 10% de desconto a partir de R$ 50,00
+    // Aplica 10% de desconto para compras a partir de R$ 50,00
     let desconto = 0;
 
     if (subtotal >= 50) {
@@ -71,7 +79,7 @@ function simularCompra() {
 
     const totalFinal = subtotal - desconto;
 
-    // Formata os números como moeda brasileira
+    // Formata os valores em reais
     function moeda(valor) {
         return valor.toLocaleString("pt-BR", {
             style: "currency",
@@ -79,9 +87,9 @@ function simularCompra() {
         });
     }
 
-    // Monta e exibe o resumo do pedido
+    // Monta o resumo da compra
     const resultado =
-        "🍔 BATISTA BURGER - RESUMO DA COMPRA\n\n" +
+        "BATISTA BURGER - RESUMO DA COMPRA\n\n" +
         "X-Burger: " + qtdBurger + " unidade(s) - " +
         moeda(totalBurger) + "\n" +
         "Batata Frita: " + qtdBatata + " unidade(s) - " +
@@ -90,10 +98,18 @@ function simularCompra() {
         moeda(totalRefri) + "\n\n" +
         "Subtotal: " + moeda(subtotal) + "\n" +
         "Desconto: " + moeda(desconto) + "\n" +
-        "TOTAL A PAGAR: " + moeda(totalFinal) +
-        (desconto > 0
-            ? "\n\nParabéns! Você ganhou 10% de desconto!"
-            : "\n\nCompras a partir de R$ 50,00 ganham 10% de desconto.");
+        "TOTAL A PAGAR: " + moeda(totalFinal);
 
-    alert(resultado);
+    // Informa se o desconto foi aplicado
+    if (desconto > 0) {
+        alert(
+            resultado +
+            "\n\nParabéns! Você ganhou 10% de desconto!"
+        );
+    } else {
+        alert(
+            resultado +
+            "\n\nCompras a partir de R$ 50,00 ganham 10% de desconto."
+        );
+    }
 }
