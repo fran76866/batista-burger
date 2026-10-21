@@ -50,7 +50,7 @@ Não é necessário instalar bibliotecas adicionais.
 
 A imagem abaixo apresenta a captura de tela da loja.
 
-![Captura de tela da Batista Burger](screenshot.png)
+![Captura de tela da Batista Burger](screenshot.jpeg)
 
 ## 🧪 Testes realizados
 
