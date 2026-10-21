@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Batista Burger: uma loja fictícia para simular compras.">
+    <title>Batista Burger | Minha Loja</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">🍔 BATISTA BURGER</div>
+        <p>Seu lanche favorito, no seu estilo!</p>
+    </header>
+
+    <main class="container">
+
+        <section class="apresentacao">
+            <span class="etiqueta">SABOR E QUALIDADE</span>
+            <h1>Bem-vindo à nossa loja!</h1>
+            <p>
+                Hambúrgueres deliciosos, batatas crocantes e bebidas geladas.
+                Escolha seus produtos e simule sua compra!
+            </p>
+        </section>
+
+        <section class="produtos" aria-label="Cardápio de produtos">
+
+            <article class="produto">
+                <div class="emoji" aria-hidden="true">🍔</div>
+                <h2>X-Burger</h2>
+                <p>Pão, hambúrguer, queijo e molho especial.</p>
+                <span class="preco">R$ 18,00</span>
+            </article>
+
+            <article class="produto">
+                <div class="emoji" aria-hidden="true">🍟</div>
+                <h2>Batata Frita</h2>
+                <p>Batatas crocantes e douradas.</p>
+                <span class="preco">R$ 10,00</span>
+            </article>
+
+            <article class="produto">
+                <div class="emoji" aria-hidden="true">🥤</div>
+                <h2>Refrigerante</h2>
+                <p>Bebida gelada para acompanhar seu lanche.</p>
+                <span class="preco">R$ 6,00</span>
+            </article>
+
+        </section>
+
+        <section class="instrucoes">
+            <h2>🛒 Simule seu pedido</h2>
+
+            <p>
+                Clique no botão e informe quantas unidades deseja
+                de cada produto. Digite 0 para não comprar um item.
+            </p>
+
+            <div class="aviso">
+                🎉 Ganhe 10% de desconto em compras a partir de R$ 50,00!
+            </div>
+
+            <button type="button" onclick="simularCompra()">
+                Simular compra
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Batista | Desafio 1 — Minha Loja</p>
+    </footer>
+
+</body>
+</html>

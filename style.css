@@ -1,0 +1,183 @@
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #262626;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background: linear-gradient(135deg, #171717, #333333);
+    color: #ffffff;
+    text-align: center;
+    padding: 35px 20px;
+    border-bottom: 5px solid #facc15;
+}
+
+.logo {
+    color: #facc15;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Conteúdo principal */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+.apresentacao {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: #a16207;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.apresentacao h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.apresentacao p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #525252;
+}
+
+/* Cartões dos produtos */
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.produto {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: 14px;
+    border: 1px solid #e5e5e5;
+    border-bottom: 5px solid #facc15;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+}
+
+.emoji {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+}
+
+.produto h2 {
+    margin-bottom: 10px;
+    color: #171717;
+}
+
+.produto p {
+    color: #666666;
+    min-height: 52px;
+}
+
+.preco {
+    display: inline-block;
+    color: #a16207;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Instruções e botão */
+.instrucoes {
+    margin-top: 35px;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e5e5e5;
+}
+
+.instrucoes h2 {
+    margin-bottom: 12px;
+}
+
+.aviso {
+    margin: 20px auto 5px;
+    max-width: 600px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fef3c7;
+    color: #854d0e;
+    font-weight: bold;
+}
+
+button {
+    background-color: #facc15;
+    color: #171717;
+    border: none;
+    padding: 15px 32px;
+    margin-top: 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #eab308;
+    transform: scale(1.03);
+}
+
+button:focus-visible {
+    outline: 3px solid #171717;
+    outline-offset: 4px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #171717;
+    color: #ffffff;
+    text-align: center;
+    padding: 22px;
+    margin-top: 45px;
+}
+
+/* Ajustes para celular e tablet */
+@media (max-width: 750px) {
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .apresentacao h1 {
+        font-size: 1.6rem;
+    }
+
+    .produto p {
+        min-height: auto;
+    }
+}
